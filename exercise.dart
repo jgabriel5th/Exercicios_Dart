@@ -130,6 +130,59 @@ void main() {
     i++;
   }
   print('A soma de 1 até n é: $soma');
+
+  // Exercício 16
+  List<String> turma = ['Guilherme', 'Ana', 'Filipe', 'Luiz', 'Willian'];
+  print(turma);
+  print(turma[0]);
+  print(turma[4]);
+  turma[1] = 'Luíza';
+  print(turma);
+
+  // Exercício 17
+  List<String> linguagens = ['Python', 'Dart', 'Java', 'PHP', 'JavaScript'];
+  for (String linguagem in linguagens) {
+    print('Estou aprendendo $linguagem');
+  }
+
+  // Exercício 18
+  for (String linguagem in linguagens) {
+    if (linguagem == 'Dart') {
+      print('DART é nossa linguagem principal!');
+    } else {
+      print('Linguagem: $linguagem');
+    }
+  }
+
+  // Exercício 19
+  Map<String, dynamic> aluno = {
+    'nome': 'João',
+    'curso': 'ADS',
+    'idade': 20,
+    'nota': 8.5,
+  };
+  print(aluno['nome']);
+  print(aluno['curso']);
+  print(aluno['idade']);
+  print(aluno['nota']);
+  print(
+    'Aluno ${aluno['nome']} do curso ${aluno['curso']} tem nota ${aluno['nota']}',
+  );
+
+  // Exercício 20
+  List<Map<String, dynamic>> turma2 = [
+    {'nome': 'Guilherme', 'nota1': 8.0, 'nota2': 7.5},
+    {'nome': 'Luíza', 'nota1': 7.0, 'nota2': 7.0},
+    {'nome': 'Luiz', 'nota1': 6.0, 'nota2': 8.0},
+    {'nome': 'Filipe', 'nota1': 9.0, 'nota2': 7.5},
+    {'nome': 'Willian', 'nota1': 8.0, 'nota2': 7.5},
+  ];
+  for (var alunos in turma2) {
+    double media = calcularMedia(alunos['nota1'], alunos['nota2']);
+    String situacao = verificarSituacao(media);
+
+    print('Aluno ${alunos['nome']}, Média: $media, Situação: $situacao');
+  }
 }
 
 void exibirBoasVindas() {
@@ -141,7 +194,18 @@ void apresentar(String nome, int idade) {
 }
 
 double calcularMedia(double n1, double n2) {
-  return (n1 + n2) / 2;
+  double media = (n1 + n2) / 2;
+  return media;
+}
+
+String verificarSituacao(double media) {
+  if (media >= 7.0) {
+    return 'Aprovado';
+  } else if (media >= 5.0 && media < 7.0) {
+    return 'Recuperação';
+  } else {
+    return 'Reprovado';
+  }
 }
 
 void exibirFicha(String nome, String curso, double media) {
