@@ -1,9 +1,11 @@
 // Exercícios:
 
 void main() {
-  print("Hello World!"); // Exercício 1
+  // Exercício 1
+  print("Hello World!");
 
-  String nome = 'João Gabriel'; // Exercício 2
+  // Exercício 2
+  String nome = 'João Gabriel';
   var idade = 21;
   int idade1 = 16;
   double nota = 8.0;
@@ -15,20 +17,25 @@ void main() {
   print(nota);
   print(matriculado);
 
-  print('Aluno: $nome'); // Exercício 3
+  // Exercício 3
+  print('Aluno: $nome');
   print('Curso: $curso');
   print('Semestre: $semestre');
   print('Próximo semestre: ${semestre + 1}');
 
-  exibirBoasVindas(); // Exercício 4
+  // Exercício 4
+  exibirBoasVindas();
 
-  apresentar('João Gabriel', 21); // Exercício 5
+  // Exercício 5
+  apresentar('João Gabriel', 21);
 
-  double resultado = calcularMedia(7, 10); // Exercício 6
+  // Exercício 6
+  double resultado = calcularMedia(7, 10);
   print('Média: $resultado');
 
+  // Exercício 7
   double nota1 = 8.5, nota2 = 9.0;
-  double media = calcularMedia(nota1, nota2); // Exercício 7
+  double media = calcularMedia(nota1, nota2);
   exibirFicha(nome, curso, media);
 
   // Exercício 8
@@ -80,6 +87,49 @@ void main() {
   } else {
     print('Usuário ou senha inválidos.');
   }
+
+  // Exercício 11
+  double peso = 100.0;
+  double altura = 1.80;
+  double resultadoIMC = calcularIMC(peso, altura);
+  if (resultadoIMC < 18.5) {
+    print('Abaixo do peso');
+  } else if (resultadoIMC < 25.0) {
+    print('Normal');
+  } else if (resultadoIMC < 30.0) {
+    print('Sobrepeso');
+  } else {
+    print('Obesidade');
+  }
+
+  // Exercício 12
+  for (int i = 1; i <= 10; i++) {
+    print('Número: $i');
+  }
+
+  // Exercício 13
+  int numero = 10;
+  for (int i = 1; i <= 10; i++) {
+    print('$numero x $i = ${numero * i}');
+  }
+
+  // Exercício 14
+  int contador = 10;
+  while (contador >= 0) {
+    print('O lançamento será em: $contador');
+    (contador--);
+  }
+  print('LANÇAMENTO!');
+
+  // Exercício 15
+  int n = 100;
+  int soma = 0;
+  int i = 1;
+  while (i <= n) {
+    soma += i;
+    i++;
+  }
+  print('A soma de 1 até n é: $soma');
 }
 
 void exibirBoasVindas() {
@@ -96,4 +146,8 @@ double calcularMedia(double n1, double n2) {
 
 void exibirFicha(String nome, String curso, double media) {
   print('Aluno: $nome\nCurso: $curso\nMédia: $media');
+}
+
+double calcularIMC(double peso, double altura) {
+  return peso / (altura * altura);
 }
